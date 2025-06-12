@@ -1,6 +1,7 @@
-// 1. Caso de teste, usuário válido, login efetuado
-
 const { test, expect }  = require('@playwright/test');
+const { LoginPage } = require('../pages/LoginPage');
+
+// 1. Caso de teste, usuário válido, login efetuado
 
 test('Login com credenciais válidas', async ({page}) => {
 
@@ -18,7 +19,7 @@ test('Login com credenciais válidas', async ({page}) => {
 
 // 2. Caso de teste, usuário inválido e senha errada, falha no login
 
-test.only('Login com credenciais inválidas', async ({page}) => {
+test('Login com credenciais inválidas', async ({page}) => {
 
     await page.goto ('https://www.saucedemo.com/');
 
