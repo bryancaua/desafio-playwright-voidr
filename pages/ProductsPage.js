@@ -12,10 +12,11 @@ class ProductsPage {
         await this.page.click(`[data-test="remove-${itemId}"]`);
   } 
   
-  async getCartCount() {
-        const badge = this.page.locator(this.cartBadge);
-        return badge.count() ? badge.textContent() : '0';
-  }
+async getCartCount() {
+    const badge = this.page.locator(this.cartBadge);
+    const count = await badge.count();
+    return count ? await badge.textContent() : '0';
+}
 
   async isProductPage() {
         return this.page.url() === 'https://www.saucedemo.com/inventory.html';
