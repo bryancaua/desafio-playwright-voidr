@@ -2,6 +2,11 @@
 
 Este projeto é parte de um desafio técnico proposto pela Voidr, com o objetivo de testar habilidades de automação de testes utilizando o Playwright com JavaScript.
 
+# Sobre mim:
+
+Desenvolvido por Bryan Cauã Arruda Santos como parte do processo teste da Voidr.
+Sou apaixonado por tecnologia e aprendizado rápido — comecei a estudar Playwright do zero para este desafio e entreguei 13 testes funcionais com qualidade e organização.
+
 ## Funcionalidades testadas
 
 Foram desenvolvidos **13 testes funcionais**, cobrindo diferentes fluxos do sistema:
