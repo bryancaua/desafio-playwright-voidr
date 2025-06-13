@@ -18,3 +18,17 @@ test('Acessar detalhes de um produto', async ({ page }) => {
 });
 
 
+// 8. Caso de teste, o usuário volta para da página de produto para a lista
+
+test('Voltar para a listagem de produtos', async ({ page }) => {
+
+   const loginPage = new LoginPage(page);
+   await loginPage.goto();
+   await loginPage.login('standard_user', 'secret_sauce');
+
+   await page.click('.inventory_item a');
+   await page.click('[data-test="back-to-products"]');
+
+   await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
+});
+
