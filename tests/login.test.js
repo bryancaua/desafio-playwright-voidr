@@ -31,3 +31,16 @@ test('Login com credenciais inválidas', async ({page}) => {
     const errorMessage = page.locator('[data-test="error"]');
     await expect(errorMessage).toBeVisible();
 })
+
+// 6. Caso de teste, Usuário tenta logar com perfil bloqueado
+
+test('Login com usuário bloqueado', async ({ page }) => {
+    const loginPage = new LoginPage(page);
+
+    await loginPage.goto();
+    await loginPage.login('locked_out_user', 'secret_sauce');
+
+    const error = await loginPage.getErrorMessage();
+    await expect(error).toBeVisible();
+    await expect(error).toHaveText(/locked out/);
+});
