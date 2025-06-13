@@ -2,6 +2,8 @@ class ProductsPage {
   constructor(page) {
     this.page = page;
     this.cartBadge = '.shopping_cart_badge';
+    this.logoutMenuButton = '#react-burger-menu-btn';
+    this.logoutLink = '#logout_sidebar_link';
   }
 
   async addItemToCart(itemId) {
@@ -20,6 +22,11 @@ async getCartCount() {
 
   async isProductPage() {
         return this.page.url() === 'https://www.saucedemo.com/inventory.html';
+  }
+
+  async logout() {
+      await this.page.click(this.logoutMenuButton);
+      await this.page.click(this.logoutLink);
   }
 }
 
